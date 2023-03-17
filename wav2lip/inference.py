@@ -119,7 +119,7 @@ class Wav2LipInference:
                 img_masked[:, self.img_size // 2:] = 0
 
                 img_batch = np.concatenate((img_masked, img_batch), axis=3) / 255.
-                mel_batch = np.reshape(selfmel_batch, [len(mel_batch), mel_batch.shape[1], mel_batch.shape[2], 1])
+                mel_batch = np.reshape(self.mel_batch, [len(mel_batch), mel_batch.shape[1], mel_batch.shape[2], 1])
 
                 yield img_batch, mel_batch, frame_batch, coords_batch
                 img_batch, mel_batch, frame_batch, coords_batch = [], [], [], []
