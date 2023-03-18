@@ -191,7 +191,7 @@ class Wav2LipInference:
         full_frames = full_frames[:len(mel_chunks)]
 
         batch_size = self.wav2lip_batch_size
-        gen = self.datagen(full_frames.copy(), mel_chunks, is_static)
+        gen = self.datagen(full_frames.copy(), mel_chunks, True)
         frame_h, frame_w = full_frames[0].shape[:-1]
         output_frames = []
         for i, (img_batch, mel_batch, frames, coords) in enumerate(
